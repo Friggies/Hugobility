@@ -1,0 +1,12 @@
+.skip-link {
+  left: 50%;
+  top: 0;
+  position: absolute;
+  transform: translateY(-100%) translateX(-50%);
+  transition: transform 200ms ease-in-out;
+  background-color: black;
+  color: white;
+  &:focus {
+    transform: translateY(0%) translateX(-50%);
+  }
+}

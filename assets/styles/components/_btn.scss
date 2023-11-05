@@ -1,0 +1,11 @@
+.btn{
+    background-color: var(--clr__bg--tinted);
+    padding: $size--xs $size--sm;
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: $size--xs;
+    font-size: large;
+}

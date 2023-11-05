@@ -1,0 +1,30 @@
+skipToContent = "Skip to main content"
+changeLang = "Change language"
+languages = "Languages"
+primaryNavigation = "Primary navigation"
+goToPrimaryNavigation = "Go to primary navigation"
+navigation = "Navigation"
+menu = "Menu"
+links = "Links"
+
+newPosts = "New posts"
+
+toc = "Table of Contents"
+availabletranslation = "Available translation"
+postData = "Post data"
+postDate = "Publication date"
+readingTime = "Reading time"
+sharebtn = "Share post"
+
+searchforposts = "Search for posts"
+searchresults = "Search Results"
+entersearch = "Enter search phrase"
+requireJs = "This function requires javascript"
+readmore = "read more"
+read = "Read"
+
+allPostsTagged = "Posts with"
+allTaxonomy = "All tags"
+[posts]
+    one = "post"
+    other = "posts"

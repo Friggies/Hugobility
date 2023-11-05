@@ -1,0 +1,12 @@
+.list{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    gap: $size--md;
+    &--row{
+        flex-direction: row;
+    }
+    &--nogap{
+        gap: 0;
+    }
+}

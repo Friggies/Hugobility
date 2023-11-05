@@ -1,0 +1,12 @@
+.lang-switcher{
+    &__lang{
+        color: var(--clr__txt--tinted);
+        &:not(:last-of-type){
+            &::after{
+                display: inline;
+                content: "/";
+                margin-right: 2px;
+            }
+        }
+    }
+}

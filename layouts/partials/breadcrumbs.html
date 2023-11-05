@@ -1,0 +1,18 @@
+{{ if eq .Site.Params.ShowBreadcrumbs "true" }}
+    {{ with .Params.HideBreadcrumbs }}
+    {{ else }}
+        <nav aria-label="breadcrumbs">
+            <ol class="breadcrumbs">
+                {{ $ancestors := .Page.Ancestors }}
+                {{ range $ancestors.Reverse }}
+                    <li class="breadcrumbs__crumb">
+                        <a href="{{ .RelPermalink }}">{{ with .Params.Breadcrumb }}{{ . }}{{ else }}{{ .Title }}{{ end }}</a>
+                    </li>
+                {{ end }}
+                <li class="breadcrumbs__crumb" aria-current="page">
+                    {{ with .Params.Breadcrumb }}{{ . }}{{ else }}{{ .Title }}{{ end }}
+                </li>
+            </ol>
+        </nav>
+    {{ end }}
+{{ end }}

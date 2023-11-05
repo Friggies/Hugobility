@@ -1,0 +1,34 @@
+.content{
+    margin-top: $size--sm;
+    p{
+        margin-bottom: $size--sm;
+    }
+    a{
+        &[target="_blank"]:after{
+            content: " (ny fane)";
+            color: var(--clr__txt--tinted);
+            font-style: italic;
+        }
+    }
+    h2{
+        margin-top: $size--md;
+    }
+    em{
+        color: var(--clr__txt--tinted);
+    }
+    code{
+        font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+        &:not(:has(span)){
+            background-color: var(--clr__bg--tinted);
+            padding: 2.5px 5px;
+            border-radius: 5px;
+        }
+    }
+    img{
+        margin: auto;
+        display: block;
+        max-width: 100%;
+        border-radius: 5px;
+        margin-bottom: $size--sm;
+    }
+}

@@ -1,0 +1,38 @@
+.header{
+    padding-block: $size--md;
+    &__title{
+        margin-right: auto;
+        font-size: x-large;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: $size--xs;
+        .global-header__activepage{
+            text-decoration: none;
+        }
+    }
+    &__list{
+        display: flex;
+        list-style-type: none;
+        flex-direction: row;
+        align-items: center;
+        gap: $size--sm;
+    }
+    &__mobilemenu{
+        display: none;
+    }
+    &__activepage{
+        text-decoration: underline;
+        text-decoration-color: var(--clr__pri);    
+    }
+}
+@media screen and (max-width: $breakpoint--sm) {
+    .header{
+        &__link{
+            display: none;
+        }
+        &__mobilemenu{
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+.breadcrumbs{
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+    margin-bottom: $size--sm;
+    &__crumb{
+        &:not(:last-of-type){
+            &::after{
+                content: ">";
+                color: var(--clr__pri);
+                margin-right: 5px;
+            }
+        }
+    }
+}

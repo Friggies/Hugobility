@@ -1,0 +1,29 @@
+skipToContent = "Spring til indhold"
+changeLang = "Skift sprog"
+languages = "Sprog"
+primaryNavigation = "Primær navigation"
+goToPrimaryNavigation = "Gå til primær navigation"
+navigation = "Navigation"
+menu = "Menu"
+links = "Links"
+
+newPosts = "Nyeste indlæg"
+
+toc = "Indholdsoversigt"
+availabletranslation = "Tilgængelige oversættelser"
+postData = "Indlægsinformation"
+postDate = "Udgivelsesdato"
+readingTime = "Læsetid"
+sharebtn = "Del indlæg"
+
+searchforposts = "Søg efter indlæg"
+searchresults = "Søgeresultater"
+entersearch = "Indtast søgefrase"
+requireJs = "Denne funktion kræver javascript"
+readmore = "læs mere"
+read = "Læs"
+
+allPostsTagged = "indlæg med"
+allTaxonomy = "Alle tags"
+[posts]
+    other = "indlæg"

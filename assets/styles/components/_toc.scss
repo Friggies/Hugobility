@@ -1,0 +1,48 @@
+.toc{
+    background-color: var(--clr__bg--tinted);
+    padding: $size--sm;
+    border-radius: 5px;
+    margin-bottom: $size--sm;
+    &__summary{
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &::marker{
+            display: none;
+        }
+        &::-webkit-details-marker{
+            display: none;
+        }
+        &:hover{
+            text-decoration: underline;
+            text-decoration-color: var(--clr__pri);
+            cursor: pointer;
+        }
+    }
+    &[open]{
+        .toc__icon{
+            transform: rotate(180deg);
+        }
+    }
+    & #TableOfContents{
+        ul {
+            list-style-type: none;
+            ul {
+                margin-left: $size--sm;
+                list-style-type: none;
+                font-style: italic;
+                li::before{
+                    content: "\2022";
+                    color: var(--clr__pri);
+                    font-weight: bold;
+                    display: inline-block;
+                    width: 1em;
+                }
+            }
+        }
+        li{
+            margin-block: 2px;
+        }
+    }
+}

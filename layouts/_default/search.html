@@ -1,0 +1,21 @@
+{{ define "main" }}
+<section aria-labelledby="h1">
+    <h1 class="title title--section" id="h1"><label for="search-query">{{ T "searchforposts" }}:</label></h1>
+    <noscript tabindex="0" autofocus>{{ T "requireJs" }}</noscript>
+    <form id="search-form" role="search">
+        <input id="search-query" placeholder='{{ T "entersearch" }}..' name="s" autocomplete="off" class="search" type="search" disabled aria-label='{{ T "requireJs" }}'/>
+    </form>
+</section>
+<section aria-labelledby="htag-resultater">
+    <h2 id="htag-resultater" class="search-results-title title title--section">{{ T "searchresults" }}:</h2>
+    <div aria-live="assertive" class="sr-only" id="nrOfResults" lang="en"></div>
+    <ol id="search-results" class="list" aria-labelledby="htag-resultater">
+    </ol>
+</section>
+<script id="search-result-template" type="text/x-js-template">
+    <li class="search-results-summary" id="summary-${key}">
+      <h3><a href="${link}" aria-label='{{ T "read" }}: ${title}' class="title">${title}</a></h3>
+      <p>${snippet}... <a href="${link}" class="link" aria-label='{{ T "read" }}: ${title}' tabindex="-1">{{ T "readmore" }}</a></p>
+    </li>
+</script>
+{{ end }}

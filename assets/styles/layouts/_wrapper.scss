@@ -1,0 +1,10 @@
+.wrapper{
+    width: calc(65% - #{$size--lg});
+    margin: auto;
+    max-width: 992px;
+}
+@media screen and (max-width: $breakpoint--sm) {
+    .wrapper{
+        width: calc(100% - #{$size--lg});
+    }
+}

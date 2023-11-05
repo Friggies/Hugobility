@@ -1,0 +1,13 @@
+.title{
+    font-size: larger;
+    font-weight: bold;
+    &--section{
+        font-size: medium;
+        margin-bottom: $size--sm;
+        text-transform: uppercase;
+        color: var(--clr__pri);
+    }
+    &--big{
+        font-size: xx-large;
+    }
+}

@@ -1,0 +1,79 @@
+<footer>
+    <nav class="wrapper">
+        <ul class="footer">
+            <li class="footer__column footer__column--big">
+                <a
+                class="footer__title"
+                {{ if .IsHome }}
+                    aria-current="page"
+                {{ end }}
+                href="{{ .Site.Home.RelPermalink }}">
+                    {{ .Site.Title }}
+                </a>
+                <p>{{ .Site.Title }} &copy; {{ now.Format "2006" }}</p>
+                {{ $currentLang := .Site.Language.Lang }}
+                {{ if gt (.Site.Languages | len ) 1}}
+                    <ul class="list list--nogap gray footer__langmenu" aria-label='{{ T "changeLang" }}' id="footerLangSwitcher">
+                        {{ range .Site.Languages }}
+                            <li>
+                                <a href="/{{ . }}" aria-label="{{ .Params.languageName }}" {{ if eq .Lang $currentLang }}aria-current="true"{{ end }} lang="{{ . }}" hreflang="{{ . }}">{{ .LanguageName }}</a>
+                            </li>
+                        {{ end }}
+                    </ul>
+                {{ end }}
+            </li>
+            {{ if eq .Site.Params.NoJavascript "true" }}
+            <li class="footer__column footer__column--hidedesktop">
+                <p class=" gray">{{ T "navigation"}}</p>
+                <ul class="list list--nogap footer__nojsmenu" id="nojsmenu">
+                    {{ $currentPage := . }}
+                    {{ range site.Menus.main }}
+                        <li>
+                            <a 
+                                {{ if $currentPage.IsMenuCurrent .Menu . }}
+                                    aria-current="page" class="header__activepage"
+                                {{ else if $currentPage.HasMenuCurrent .Menu . }}
+                                    aria-current="true"
+                                {{ end }}
+                                href="{{ .URL }}">
+                                {{ .Name }}
+                            </a>
+                        </li>
+                    {{ end }}
+                </ul>
+            </li>
+            {{ end }}
+            {{ if gt site.Menus.footer 0}}
+                <li class="footer__column">
+                    <p class=" gray">{{ T "menu"}}</p>
+                    <ul class="list list--nogap">
+                        {{ $currentPage := . }}
+                        {{ range site.Menus.footer }}
+                            <li>
+                                <a 
+                                    {{ if $currentPage.IsMenuCurrent .Menu . }}
+                                        aria-current="page" class="header__activepage"
+                                    {{ else if $currentPage.HasMenuCurrent .Menu . }}
+                                        aria-current="true"
+                                    {{ end }}
+                                    href="{{ .URL }}">
+                                    {{ .Name }}
+                                </a>
+                            </li>
+                        {{ end }}
+                    </ul>
+                </li>
+            {{ end }}
+            {{ with .Site.Params.links }}
+                <li class="footer__column">
+                    <p class=" gray">{{ T "links" }}</p>
+                    <ul class="list list--nogap">
+                        {{ range $platform, $url := . }}
+                            <li><a href="{{ $url }}" target="_blank" class="footer__social">{{ $platform }}</a></li>
+                        {{ end }}
+                    </ul>
+                </li>
+            {{ end }}
+        </ul>
+    </nav>
+</footer>

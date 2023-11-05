@@ -1,0 +1,45 @@
+.footer{
+    padding-block: $size--md;
+    display: flex;
+    gap: $size--md;
+    &__column{
+        display: flex;
+        flex-direction: column;
+        &--big{
+            flex: 1;
+        }
+        &--hidedesktop{
+            display: none;
+        }
+    }
+    &__title{
+        margin-right: auto;
+        font-size: x-large;
+        font-weight: bold;
+        margin-bottom: $size--sm;
+    }
+    &__langmenu{
+        margin-top: $size--sm;
+    }
+    &__langmenu:target{
+        outline: 2px solid var(--clr__pri);
+        border-radius: 5px;
+    }
+    &__nojsmenu:target{
+        outline: 2px solid var(--clr__pri);
+        border-radius: 5px;
+    }
+    &__social{
+        text-transform: capitalize;
+    }
+}
+@media screen and (max-width: $breakpoint--sm) {
+    .footer{
+        flex-direction: column;
+        &__column{
+            &--hidedesktop{
+                display: flex;
+            }
+        }
+    }
+}

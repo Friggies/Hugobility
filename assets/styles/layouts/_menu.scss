@@ -1,0 +1,22 @@
+.menu{
+    min-width: 100%;
+    background-color: var(--clr__bg);
+    color: var(--clr__txt);
+    padding: $size--md;
+    border: none;
+    border-radius: 0;
+    font-size: large;
+    &__title{
+        margin-right: auto;
+        font-size: x-large;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+    }
+    &__close{
+        position: absolute;
+        top: $size--md;
+        right: $size--md;
+        font-size: x-large;
+    }
+}

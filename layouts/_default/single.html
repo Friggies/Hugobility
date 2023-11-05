@@ -1,0 +1,13 @@
+{{ define "main" }}
+{{ partial "breadcrumbs" .}}
+{{ partial "asidemenu" . }}
+<article>
+    <h1 class="title title--big" id="h1">{{ .Title }}</h1>
+    {{ partial "tags" . }}
+    {{ partial "postdata" . }}
+    <section class="content" aria-labelledby="h1">
+        {{ .Content }}
+    </section>
+    {{ partial "sharebutton" . }}
+</article>
+{{ end }}

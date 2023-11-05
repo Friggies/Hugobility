@@ -1,0 +1,21 @@
+name = "Hugobility"
+license = "MIT"
+licenselink = "https://github.com/Friggies/Hugobility/blob/main/LICENSE"
+description = "A customizable minimalistic multilingual HUGO blog theme with focus on accessibility and SEO."
+homepage = "http://example.com/"
+tags = [
+  "blog",
+  "responsive",
+  "minimal",
+  "light",
+  "dark",
+  "multilingual",
+  "accessible",
+  "search"
+]
+features = []
+min_version = "0.85.0"
+
+[author]
+  name = "Frej Dahl Linneke"
+  homepage = "https://github.com/friggies/"

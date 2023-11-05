@@ -1,0 +1,28 @@
+<p class="gray" aria-label='{{ T "postData"}}'>
+    {{ if eq .Site.Params.ShowPostDate "true" }}
+        {{ with .Params.HidePostDate }}
+        {{ else }}
+            {{ with .Params.Date }}
+            <time datetime="{{ .Format "2006-01-02" }}" aria-label='{{ T "postDate"}}'>
+                {{ . | time.Format ":date_medium" }}
+            </time>
+            {{ end }}
+        {{ end }}
+    {{ end }}
+
+    {{ $readingTimeMin := div .WordCount 160 }}
+    {{ if eq .Site.Params.ShowPostReadingTime "true" }}
+        {{ with .Params.HidePostReadingTime }}
+        {{ else }}
+            {{ if gt $readingTimeMin 0 }}
+                {{ if or (eq .Site.Params.ShowPostDate "false") (.Params.HidePostDate) }}
+                {{ else }}
+                    {{ with .Params.Date }}
+                        -
+                    {{ end }}
+                {{ end }}
+                <span aria-label='{{ T "readingTime"}}'>{{ $readingTimeMin }} min.</span>
+            {{ end }}
+        {{ end }}
+    {{ end }}
+</p>

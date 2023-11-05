@@ -1,0 +1,68 @@
+<header class="header">
+    <a class="skip-link" href="#main">{{ T "skipToContent" }}</a>
+    <nav class="wrapper" aria-label='{{ T "primaryNavigation" }}'>
+        <ul class="header__list">
+            <li class="header__title">
+                <a
+                    {{ if .IsHome }}
+                        aria-current="page"
+                    {{ end }}
+                    href="{{ .Site.Home.RelPermalink }}">
+                    {{ .Site.Title }}
+                </a>
+            </li>
+            {{ $currentLang := .Site.Language.Lang }}
+            {{ if (and (gt (.Site.Languages | len ) 1) (lt (.Site.Languages | len ) 3))}}
+                <li>
+                    <ul class="lang-switcher list list--row list--nogap" aria-label='{{ T "changeLang" }}'>
+                        {{ range .Site.Languages }}
+                            <li class="lang-switcher__lang">
+                            <a href="/{{ . }}" aria-label="{{ .Params.languageName }}" {{ if eq .Lang $currentLang }}aria-current="true"{{ end }} lang="{{ . }}" hreflang="{{ . }}">{{ . }}</a>
+                            </li>
+                        {{ end }}
+                    </ul>
+                </li>
+            {{ else if gt (.Site.Languages | len ) 1}}
+                <li>
+                    {{ if eq .Site.Params.NoJavascript "true" }}
+                        <a href="#footerLangSwitcher" class="gray">{{ T "languages" }}</a>
+                    {{ else }}
+                        <select aria-label='{{ T "changeLang"}}' id="langSwitcher" class="select">
+                            <option value="{{ $currentLang }}" lang="{{ $currentLang }}">{{ .Site.Language.LanguageName }}</option>
+                            {{ range .Site.Languages }}
+                                {{ if ne .Lang $currentLang }}
+                                <option value="{{ . }}" lang="{{ . }}">{{ .Params.LanguageName }}</option>
+                                {{ end }}
+                            {{ end }}
+                        </select>
+                    {{ end}}
+                </li>
+            {{ end }}
+            {{ $currentPage := . }}
+            {{ range site.Menus.main }}
+                <li class="header__link">
+                    <a 
+                        {{ if $currentPage.IsMenuCurrent .Menu . }}
+                            aria-current="page" class="header__activepage"
+                        {{ else if $currentPage.HasMenuCurrent .Menu . }}
+                            aria-current="true"
+                        {{ end }}
+                        href="{{ .URL }}">
+                        {{ .Name }}
+                    </a>
+                </li>
+            {{ end }}
+            <li class="header__mobilemenu">
+                {{ if eq .Site.Params.NoJavascript "true" }}
+                    <a href="#nojsmenu" aria-label='{{ T "goToPrimaryNavigation"}}'>Menu</a>
+                {{ else }}
+                    <button id="menuopen" class="btn" aria-label='{{ T "goToPrimaryNavigation"}}'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                        </svg>
+                    </button>
+                {{ end }}
+            </li>
+        </ul>
+    </nav>
+</header>

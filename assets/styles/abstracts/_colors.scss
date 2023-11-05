@@ -1,0 +1,23 @@
+@media (prefers-color-scheme: dark) {
+    :root{
+        --clr__bg: #262626;
+        --clr__bg--tinted: #3c3c3c;
+        --clr__txt: #f2f2f2;
+        --clr__txt--tinted: #B3B3B3;
+        --clr__pri: #93beff;
+        --clr__searchborder: transparent;
+    }
+}
+@media (prefers-color-scheme: light) {
+    :root{
+        --clr__bg: #ffffff;
+        --clr__bg--tinted: #e5e5e5;
+        --clr__txt: #262626;
+        --clr__txt--tinted: #4F4F4F;
+        --clr__pri: #006029;
+        --clr__searchborder: #262626;
+    }
+}
+.gray{
+    color: var(--clr__txt--tinted);
+}

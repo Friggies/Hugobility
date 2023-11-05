@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    &:focus{
+        outline: 2px solid var(--clr__pri);
+        border-radius: 5px;
+    }
+}
+body{
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+    background-color: var(--clr__bg);
+    color: var(--clr__txt);
+}
+a,button{
+    color: inherit;
+    font-family: inherit;
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    &:hover{
+        text-decoration: underline;
+        text-decoration-color: var(--clr__pri);
+    }
+}

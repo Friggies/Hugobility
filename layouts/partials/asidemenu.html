@@ -1,0 +1,26 @@
+<aside>
+    {{ if eq .Site.Params.ShowPostTableOfContents "true" }}
+        {{ with .Params.HideTableOfContents }}
+        {{ else }}
+            <details class="toc">
+                <summary class="toc__summary">{{T "toc"}}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="toc__icon" viewBox="0 0 16 16">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                    </svg>
+                </summary>
+                {{ .TableOfContents }}
+            </details>
+        {{ end }}
+    {{ end }}
+
+    {{ if .IsTranslated }}
+        <p>{{ T "availabletranslation"}}:</p>
+        <nav>
+            <ul class="langs">
+                {{ range .Translations }}
+                    <li class="langs__lang"><a href="{{ .Permalink }}" lang="{{ .Language.Lang }}" class="link" hreflang="{{ .Language.Lang }}">{{ .Language.Params.TranslationAvailable }}</a></li>
+                {{ end}}
+            </ul>
+        </nav>
+    {{ end }}
+</aside>

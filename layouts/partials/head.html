@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{{if .IsHome}}{{ .Site.Title }}{{else}}{{.Title}} &verbar; {{ .Site.Title }}{{end}}</title>
+<meta name="description" content="{{ with .Description }}{{ . | truncate 150 }}{{ else }}{{ .Summary | truncate 150 }}{{ end }}">
+
+{{ with .Params.NoIndex }}
+    <meta name="robots" content="noindex">
+{{ end }}
+
+{{ $styles := resources.Get "styles/main.scss" | resources.ToCSS | resources.Minify }}
+<link rel="stylesheet" href="{{ $styles.Permalink }}" type="text/css" crossorigin="anonymous">
+
+{{ $langswitcher := resources.Get "scripts/langswitcher.js" }}
+{{ $langswitcherMini := $langswitcher | resources.Minify }}
+<script defer src="{{ $langswitcherMini.Permalink }}"></script>
+
+{{ $menu := resources.Get "scripts/menu.js" }}
+{{ $menuMini := $menu | resources.Minify }}
+<script defer src="{{ $menuMini.Permalink }}"></script>
+
+
+{{ if (and (eq .Section "posts") (.IsPage)) }}
+    {{ $shareBtn := resources.Get "scripts/share.js" }}
+    {{ $shareBtnMini := $shareBtn | resources.Minify }}
+    <script defer src="{{ $shareBtnMini.Permalink }}"></script>
+{{ end }}
+
+{{ if eq .Layout "search" }}
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.0/fuse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+    {{ $search := resources.Get "scripts/search.js" }}
+    {{ $searchMini := $search | resources.Minify }}
+    <script defer src="{{ $searchMini.Permalink }}"></script>
+{{ end }}
+
+{{ if .IsTranslated }}
+    {{ range .Translations }}
+        <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
+    {{ end }}
+{{ end }}

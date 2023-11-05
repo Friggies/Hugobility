@@ -1,0 +1,10 @@
+{{ with .Params.HideTags }}
+{{ else }}
+{{ with .Params.Tags }}
+    <ul class="list list--row tags" aria-label="Tags">
+        {{ range . }}
+            <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="tags__tag">{{ . }}</a></li>
+        {{ end }}
+    </ul>
+{{ end }}
+{{ end }}

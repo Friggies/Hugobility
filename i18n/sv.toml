@@ -1,0 +1,30 @@
+skipToContent = "Hoppa till huvudinnehållet"
+changeLang = "Byt språk"
+languages = "Språk"
+primaryNavigation = "Primär navigation"
+goToPrimaryNavigation = "Gå till primär navigation"
+navigation = "Navigation"
+menu = "Menu"
+links = "Länkar"
+
+newPosts = "Nya inlägg"
+
+toc = "Innehållsförteckning"
+availabletranslation = "Tillgängliga översättningar"
+postData = "Inläggsdata"
+postDate = "Publiceringsdatum"
+readingTime = "Läsningstid"
+sharebtn = "Dela inlägg"
+
+searchforposts = "Sök efter inlägg"
+searchresults = "Sökresultat"
+entersearch = "Ange sökfras"
+requireJs = "Denna funktion kräver javascript"
+readmore = "läs mer"
+read = "läs"
+
+allPostsTagged = "Inlägg med"
+allTaxonomy = "Alla taggar"
+[posts]
+    one = "inlägg"
+    other = "inlägg"

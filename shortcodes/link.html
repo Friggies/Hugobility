@@ -1,0 +1,7 @@
+<a 
+    {{ with .Get "href" }} href='{{ . }}'{{ end }}
+    {{ with .Get "label" }} aria-label='{{ . }}'{{ end }}
+    {{ with .Get "target"}} target='{{ . }}'{{ end }}
+    rel="noopener">
+    {{ .Inner | markdownify }}
+</a>

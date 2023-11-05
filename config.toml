@@ -1,0 +1,21 @@
+[module]
+  [module.hugoVersion]
+    min = "0.85.0"
+
+[languages]
+  [languages.en.params]
+    translationAvailable = "English translation available"
+  [languages.da.params]
+    translationAvailable = "Dansk oversættelse tilgængelig"
+  [languages.sv.params]
+    translationAvailable = "Svensk översättning tillgänglig"
+
+
+[params]
+  NoJavascript = "false"
+  ShowTagsInLists = "false"
+  ShowBreadcrumbs = "true"
+  ShowPostTableOfContents = "true"
+  ShowPostShareButton = "true"
+  ShowPostDate = "true"
+  ShowPostReadingTime = "true"

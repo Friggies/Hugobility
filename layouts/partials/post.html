@@ -1,0 +1,16 @@
+<li class="list__item">
+<h3 class="title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    {{ partial "postdata" . }}
+	{{ if eq .Site.Params.ShowTagsInLists "true" }}
+		{{ partial "tags" . }}
+	{{ end }}
+    {{ if in .RelPermalink "/tags/" }}
+        {{ $count := 0 }}
+		{{ range where .Site.RegularPages "Params.Tags" "intersect" (slice .Title) }}
+			{{ $count = add $count 1 }}
+	  	{{ end }}
+		<p class="gray">
+			{{ $count }} {{ T  "posts" $count }}
+		</p>
+    {{end}}
+</li>

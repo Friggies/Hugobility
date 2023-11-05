@@ -1,0 +1,8 @@
+.highlight{
+    margin-block: $size--sm;
+    > pre{
+        padding: $size--sm;
+        border-radius: 5px;
+        overflow: auto;
+    }
+}
