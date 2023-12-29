@@ -7,7 +7,7 @@
 - [Features](#features-)
 - [Installation](#installation-)
 - [Configuration](#configuration-)
-- [Customization](#customization-)
+- [Customization](#customization-%EF%B8%8F)
 - [Help needed?](#help-needed-)
 - [Acknowledgments](#acknowledgments-)
 
